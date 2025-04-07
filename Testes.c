@@ -1,32 +1,85 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main (){
 
-    int numero;
+    int jogador, computador;
+    srand(time(0));
 
-    printf("Digite um número:\n");
-    scanf("%d",&numero);
+    printf("****   Jokenpô   ****\n");
+    printf("Escolha uma opção\n");
+    printf("1. Pedra\n");
+    printf("2. Papel\n");
+    printf("3. Tesoura\n");
+    printf("Escolha:\n");
+    scanf("%d", &jogador);
 
-    int resultado = numero % 2;
+    computador = rand() % 3 + 1;
 
-   if (numero > 0)
-   {
-    if (numero % 2 == 0)
+    switch (jogador)
     {
-        printf("O número é positivo e par\n");
+    case 1:
+        printf("O jogador escolheu Pedra\n");
+        break;
+    case 2:
+        printf("O jogador escolheu Papel\n");
+        break;
+    case 3:
+        printf("O jogador escolheu Tesoura\n");
+        break;
+    default:
+        printf("Opção Inválida\n");
+        break;
     }
-    else {
-        printf("O número é positivo e impar\nn");
+    switch (computador)
+    {
+    case 1:
+        printf("O computador escolheu Pedra\n");
+        break;
+    case 2:
+        printf("O computador escolheu Papel\n");
+        break;
+    case 3:
+        printf("O computador escolheu Tesoura\n");
+        break;
     }
-   }
-   else if (numero == 0)
-   {
-    printf("O número é 0\n");
-}else {
-    printf("Negativo\n");
-}
-  
-}
+        if (jogador == computador)
+        {
+            printf("Empate\n");
+        }
+        else if (jogador == 1 && computador == 2)
+        {
+            printf("O computador ganhou\n");
+        }
+        else if (jogador == 2 && computador == 3)
+        {
+            printf("O computador ganhou\n");
+        }
+        else if (jogador == 2 && computador == 1)
+        {
+            printf("O jogador ganhou\n");
+        }
+        else if (jogador == 3 && computador == 2)
+        {
+            printf("O jogador ganhou\n");
+        }
+        else if (jogador == 1 && computador == 3)
+        {
+            printf("O jogador ganhou\n");
+        }
+        else if (jogador == 3 && computador == 1)
+        {
+            printf("O computador ganhou\n");
+        }
+    
+
+
+    }
+
+
+
+
 
 
 
